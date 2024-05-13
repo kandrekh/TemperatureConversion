@@ -16,14 +16,30 @@ import java.util.Scanner;
 public class Temperature {
 
     public  static void main(String[] args) {
+        // Call userChoice() method
+        userChoice();
+    }
+
+    /**
+     * Prompt user to get their input.
+     */
+    public static void userChoice() {
         Scanner input = new Scanner(System.in);
-        // Get Fahrenheit from user
-        System.out.print("Enter temperature in Fahrenheit: ");
-        double temperature = input.nextDouble();
+        double temperature;
+        System.out.println("Convert to Celsius (1) | Convert to Kelvin (2)");
 
-        // Display the results from the calculations
-        System.out.println("Degree in Celsius: " + Converter.calcCelsius(temperature) + "°C");
-        System.out.println("Degree in Kelvin: " + Converter.calcKelvin(temperature) + "K");
-
+        System.out.print("Choose an option: ");
+        int option = input.nextInt();
+        switch (option) {
+            case 1: System.out.print("Enter temperature in Fahrenheit: ");
+                     temperature = input.nextDouble();
+                    System.out.println("Degree in Celsius: " + Converter.calcCelsius(temperature) + "°C");
+                    break;
+            case 2: System.out.print("Enter temperature in Fahrenheit: ");
+                     temperature = input.nextDouble();
+                    System.out.println("Degree in Kelvin: " + Converter.calcKelvin(temperature) + "K");
+                    break;
+            default: System.out.println("Invalid option");
+        }
     }
 }
