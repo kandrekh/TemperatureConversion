@@ -40,6 +40,7 @@ public class Temperature {
                     System.out.println("Degree in Kelvin: " + Converter.calcKelvin(temperature) + "K");
                     break;
             default: System.out.println("Invalid option");
+            userChoice(); // calls function in order to prompt user everytime invalid input
         }
     }
 }
